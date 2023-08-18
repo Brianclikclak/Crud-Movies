@@ -32,6 +32,13 @@ public class Film {
         this.genre = genre;
     }
 
+    public Film(String title, int date, String genre) {
+        super();
+        this.title = title;
+        this.date = date;
+        this.genre = genre;
+    }
+
     public String getTitle() {
         return title;
     }
