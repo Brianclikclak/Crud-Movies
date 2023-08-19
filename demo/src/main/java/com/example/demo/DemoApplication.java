@@ -20,14 +20,16 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Film film1 = new Film("A todo gas", 2000, "Accion", "Louis Leterrier");
-		respository.save(film1);
-
-		Film film2 = new Film("A todo gas 2", 2002, "Accion", "Louis Leterrier");
-		respository.save(film2);
-
-		Film film3 = new Film("A todo gas 3 ", 2003, "Accion", "Louis Leterrier");
-		respository.save(film3);
+		/*
+		 * Film film1 = new Film("A todo gas", 2000, "Accion", "Louis Leterrier");
+		 * respository.save(film1);
+		 * 
+		 * Film film2 = new Film("A todo gas 2", 2002, "Accion", "Louis Leterrier");
+		 * respository.save(film2);
+		 * 
+		 * Film film3 = new Film("A todo gas 3 ", 2003, "Accion", "Louis Leterrier");
+		 * respository.save(film3);
+		 */
 	}
 
 }
