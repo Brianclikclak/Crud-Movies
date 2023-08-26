@@ -18,7 +18,7 @@ import com.example.demo.services.FilmService;
 public class FilmController {
 
     @Autowired
-    private FilmService service;
+    private FilmService filmService;
 
     @GetMapping("/{id}")
     public Optional<Film> getFilmById(@PathVariable Long id) {
