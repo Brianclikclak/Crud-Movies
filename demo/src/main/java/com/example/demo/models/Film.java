@@ -27,28 +27,33 @@ public class Film {
     @Column(name = "director", nullable = false)
     private String director;
 
-    public Film(Long id, String title, int date, String genre) {
+    public Film(Long id, String title, int date, String genre, String director) {
         super();
         this.id = id;
         this.title = title;
         this.date = date;
         this.genre = genre;
+        this.director = director;
 
     }
 
-    public Film(String title, int date, String genre, String director) {
-        super();
-        this.title = title;
-        this.date = date;
-        this.genre = genre;
-        this.director = director;
+    public Film() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTittle(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -68,11 +73,11 @@ public class Film {
         this.genre = genre;
     }
 
-    public String GetDirector() {
+    public String getDirector() {
         return director;
     }
 
-    public void SetDirector(String director) {
+    public void setDirector(String director) {
         this.director = director;
     }
 
