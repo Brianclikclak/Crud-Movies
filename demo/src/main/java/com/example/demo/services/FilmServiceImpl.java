@@ -1,23 +1,31 @@
 package com.example.demo.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.models.Film;
-import com.example.demo.repository.FilmRespository;
+import com.example.demo.repository.FilmRepository;
 
 @Service
 public class FilmServiceImpl implements FilmService {
 
     @Autowired
-    private FilmRespository respository;
+    private FilmRepository filmrepository;
 
     @Override
-    public List<Film> listAllFilms() {
+    @Transactional(readOnly = true)
+    public List<Film> findAll() {
+        return filmrepository.findAll();
+    }
 
-        return respository.findAll();
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<Film> findById(Long id) {
+        return filmrepository.findById(id);
     }
 
 }
