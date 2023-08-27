@@ -28,4 +28,10 @@ public class FilmServiceImpl implements FilmService {
         return filmrepository.findById(id);
     }
 
+    @Override
+    @Transactional
+    public Film save(Film film) {
+        return filmrepository.save(film);
+    }
+
 }
