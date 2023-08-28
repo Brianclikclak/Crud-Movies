@@ -34,4 +34,28 @@ public class FilmServiceImpl implements FilmService {
         return filmrepository.save(film);
     }
 
+    @Override
+    public void deleteById(Long id) {
+        filmrepository.deleteById(id);
+    }
+
+    @Override
+
+    @Transactional
+    public Film updateFilmById(Long id, Film filmDetails) {
+        Optional<Film> optionalFilm = findById(id);
+
+        if (optionalFilm.isPresent()) {
+            Film film = optionalFilm.get();
+            film.setTitle(filmDetails.getTitle());
+            film.setDate(filmDetails.getDate());
+            film.setGenre(filmDetails.getGenre());
+            film.setDirector(filmDetails.getDirector());
+            return save(film);
+        } else {
+
+            return null;
+        }
+    }
+
 }
